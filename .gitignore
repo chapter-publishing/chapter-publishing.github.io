@@ -1,0 +1,17 @@
+target/
+build/
+dist/
+coverage/
+.dart_tool/
+.zed-cache/
+.zpkg-pack/
+.zpkg.lock
+zed_modules/
+.vendor/
+node_modules/
+.env
+.env.*
+!/.env.example
+env/dec/
+*.log
+.DS_Store

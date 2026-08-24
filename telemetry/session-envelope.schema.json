@@ -1,0 +1,78 @@
+{
+  "$id": "https://chapter-publishing.dev/schema/telemetry/session-envelope.v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "attributes": {
+      "additionalProperties": true,
+      "maxProperties": 64,
+      "type": "object"
+    },
+    "eventId": {
+      "format": "uuid",
+      "type": "string"
+    },
+    "name": {
+      "maxLength": 160,
+      "minLength": 1,
+      "type": "string"
+    },
+    "occurredAt": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "projectId": {
+      "pattern": "^[a-z0-9][a-z0-9_-]{1,62}$",
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": "ores-otel.session.v1"
+    },
+    "sessionId": {
+      "maxLength": 128,
+      "minLength": 16,
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "trace",
+        "debug",
+        "info",
+        "warn",
+        "error",
+        "fatal"
+      ]
+    },
+    "spanId": {
+      "pattern": "^[0-9a-f]{16}$",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "traceId": {
+      "pattern": "^[0-9a-f]{32}$",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "userId": {
+      "maxLength": 128,
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "eventId",
+    "projectId",
+    "userId",
+    "sessionId",
+    "occurredAt",
+    "severity",
+    "name"
+  ],
+  "title": "Chapter Publishing private session telemetry envelope",
+  "type": "object"
+}

@@ -1,0 +1,6 @@
+# Supplemental, non-authoritative metadata for repositories with an existing .zpkg.toml.
+[chapter_publishing]
+repository = "chapter-publishing/chapter-publishing.github.io"
+role = "website"
+quality_gate = "python3 scripts/chptr_quality.py"
+telemetry_contract = "telemetry/session-envelope.schema.json"

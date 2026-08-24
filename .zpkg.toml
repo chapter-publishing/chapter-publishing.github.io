@@ -12,3 +12,13 @@ url = "https://github.com/chapter-publishing/chapter-publishing.github.io"
 [targets.repository]
 dir = "."
 adapter = "none"
+
+[lifecycle]
+pre_install = ".zed/pre-install"
+post_install = ".zed/post-install"
+pre_build = ".zed/pre-build"
+post_build = ".zed/post-build"
+pre_test = ".zed/pre-test"
+post_test = ".zed/post-test"
+pre_publish = ".zed/pre-publish"
+post_publish = ".zed/post-publish"

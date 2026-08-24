@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+set -eu
+python3 scripts/chptr_quality.py
+git diff --exit-code

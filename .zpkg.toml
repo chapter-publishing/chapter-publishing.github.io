@@ -1,0 +1,14 @@
+[package]
+org = "chapter-publishing"
+name = "chapter-publishing.github.io"
+version = "0.1.0"
+description = "Public Chapter Publishing documentation"
+license = "MIT"
+
+[package.repository]
+vcs = "git"
+url = "https://github.com/chapter-publishing/chapter-publishing.github.io"
+
+[targets.repository]
+dir = "."
+adapter = "none"

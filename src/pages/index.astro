@@ -1,4 +1,48 @@
 ---
-const features = ['Revision-checked publishing lifecycle', 'Offline-first Flutter and Rust desktop clients', 'Twenty generated language SDKs', 'Private per-session telemetry'];
+import Layout from '../layouts/Layout.astro';
+
+const stages = [
+  ['01', 'Shape', 'Frame the chapter, contributors, source material, and editorial intent before the draft starts moving.'],
+  ['02', 'Revise', 'Keep review state, attribution, and decisions attached to the work instead of scattering them across private threads.'],
+  ['03', 'Release', 'Publish a revision-checked artifact with a legible path back to the people and decisions that shaped it.'],
+];
+
+const principles = [
+  ['Authorship stays visible', 'Contribution history remains part of the editorial story, not metadata that disappears at export time.'],
+  ['Offline work can rejoin', 'Client work is designed to synchronize deliberately across device and network boundaries.'],
+  ['A release is a state', 'Draft, review, approval, and publication are explicit transitions rather than conventions hidden in filenames.'],
+];
 ---
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="description" content="Chapter Publishing: contract-driven collaborative publishing."/><title>Chapter Publishing</title></head><body><main><p>Chapter Publishing</p><h1>Publish chapters without losing authorship, state, or trust.</h1><p>Contract-driven editorial workflows with deterministic clients, offline sync, and auditable releases.</p><a href="https://github.com/chapter-publishing">Explore the platform</a><ul>{features.map((feature) => <li>{feature}</li>)}</ul></main></body></html>
+<Layout title="Chapter Publishing — Editorial work with a durable history" description="Chapter Publishing brings authorship, revision state, offline work, and auditable release decisions into one editorial workflow.">
+  <section class="hero shell">
+    <div class="hero-copy">
+      <p class="eyebrow">Editorial systems / durable authorship</p>
+      <h1>Every chapter deserves a history worth keeping.</h1>
+      <p class="lede">Chapter Publishing brings drafts, reviewers, authorship, offline work, and release decisions into one legible editorial lifecycle.</p>
+      <div class="actions">
+        <a class="button" href="/workflow/">See the editorial flow</a>
+        <a class="button secondary" href="https://auth.chapter-publishing.github.io/">Create an account</a>
+      </div>
+      <p class="note">Product preview · Follow the repositories for current availability.</p>
+    </div>
+    <div class="manuscript" aria-label="An editorial manuscript moving through review">
+      <div class="folio folio-back"><small>REVISION 08</small><span></span><span></span><span></span></div>
+      <div class="folio folio-front"><div class="folio-head"><small>CHAPTER / 12</small><small>REVIEW READY</small></div><h2>The margin remembers.</h2><p>Every note, handoff, and release decision has somewhere durable to live.</p><div class="review"><span>AM</span><span>JL</span><span>+3</span><strong>5 contributors</strong></div></div>
+      <div class="annotation">Approved with context <b>✓</b></div>
+    </div>
+  </section>
+  <section class="signal-strip"><span>Revision checked</span><span>Offline aware</span><span>Attribution preserved</span><span>Release auditable</span></section>
+  <section class="section shell">
+    <div class="section-heading"><p class="eyebrow">One lifecycle</p><h2>From a promising draft to a release people can stand behind.</h2></div>
+    <ol class="stage-grid">
+      {stages.map(([number, title, body]) => <li><span>{number}</span><h3>{title}</h3><p>{body}</p></li>)}
+    </ol>
+  </section>
+  <section class="ink-section">
+    <div class="shell split"><div><p class="eyebrow">Designed for continuity</p><h2>The work can travel without losing its shape.</h2></div><div class="principles">{principles.map(([title, body]) => <article><h3>{title}</h3><p>{body}</p></article>)}</div></div>
+  </section>
+  <section class="access shell">
+    <div><p class="eyebrow">Choose your workspace</p><h2>Read publicly. Work in the right boundary.</h2></div>
+    <div class="access-links"><a href="https://user.chapter-publishing.github.io/"><small>Individual</small><strong>User login</strong></a><a href="https://org.chapter-publishing.github.io/"><small>Editorial team</small><strong>Organization login</strong></a><a href="https://auth.chapter-publishing.github.io/"><small>New account</small><strong>Sign up</strong></a></div>
+  </section>
+</Layout>
